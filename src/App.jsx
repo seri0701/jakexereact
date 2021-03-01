@@ -1,22 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
+
 const App = () => {
-  const onClickButton = () => alert();
-  const contentStyle = {
-    color: "blue",
-    fontSize: "18px"
+  const onClickCountUp = () => {
+    setNum(num + 1);
   };
-  const contentLedyStyle = {
-    color: "pink",
-    fontSize: "18px"
-  };
+  useState();
+  const [num, setNum] = useState(0);
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは!</h1>
-      <ColorfulMessage color="blue" maessage="お元気ですか？" />
-      <p style={contentStyle}>お元気ですか？</p>
-      <p style={contentLedyStyle}>元気です！</p>
-      <button onClick={onClickButton}>ボタン</button>
+      <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
+      <ColorfulMessage color="pink">元気です!</ColorfulMessage>
+      <button onClick={onClickCountUp}>カウントアップ！</button>
+      <p>{num}</p>
     </>
   );
 };
